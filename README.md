@@ -20,15 +20,17 @@ This app allows you to upload PDF or TXT documents, process them into embeddings
 
 
 
-2.Check installation by running python--version
+2.Check installation by running python--version.
 
+2.1 Install git if not installed.
+&nbsp;       Go to: https://git-scm.com/downloads
 
 
 3.Clone the repository use below commands in bash.
 
-&nbsp;        git clone <repository\_url>
+&nbsp;        git clone https://github.com/AkilaDissanayake/DocuQuery.git
 
-&nbsp;        cd <repository\_folder>
+&nbsp;        cd DocuQuery/
 
 
 
