@@ -64,12 +64,9 @@ This app allows you to upload PDF or TXT documents, process them into embeddings
 
 
 ##### Notes
-
-
-
-* Embeddings are cumulative: Adding new files will not delete embeddings from previously uploaded files.
+* Upload files large than 1200 characters 
 * Processing is required after uploading all files for embeddings to be created.
-* Cache: Embeddings are temporarily stored in embeddings\_cache.npz and cleared when the app exits.
+* Cache: Embeddings are temporarily stored in embeddings\_cache.npz and cleared when the process start.
 
 
 
