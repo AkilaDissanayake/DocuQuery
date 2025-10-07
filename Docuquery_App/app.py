@@ -1,7 +1,6 @@
 import os
 import streamlit as st
 import openai
-import atexit
 from dotenv import load_dotenv
 
 from document_processor import extract_text_from_file  #Extracts text from PDF/TXT
@@ -19,12 +18,6 @@ TOP_K = 4                                             #Number of top similar chu
 TEMPERATURE = 0.0                                     #Creativity level
 MAX_TOKENS = 500                                      #Max tokens to generate per answer
 
-#Clear cache files when closing the app
-def clear_on_exit():
-    if os.path.exists(CACHE_PATH):
-        os.remove(CACHE_PATH)
-
-atexit.register(clear_on_exit) 
 
 #Load environment variables(Access api key securely)
 load_dotenv()
@@ -84,7 +77,8 @@ uploaded_files = st.file_uploader(
 # Start processing (Embeddings are not created for each upload-reduce token usage)
 
 if st.button("Start processing"):
-
+    if os.path.exists(CACHE_PATH):   #Clear cache files when starting process
+        os.remove(CACHE_PATH)
     #Extract text
     if uploaded_files:
         combined_texts = []
