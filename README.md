@@ -6,7 +6,7 @@ This app allows you to upload PDF or TXT documents, process them into embeddings
 
 ##### 
 
-##### Installation and Setup
+##### Installation and Setup (Once)
 
 
 
@@ -30,7 +30,7 @@ This app allows you to upload PDF or TXT documents, process them into embeddings
 
 &nbsp;        git clone https://github.com/AkilaDissanayake/DocuQuery.git
 
-&nbsp;        cd DocuQuery/
+&nbsp;        cd DocuQuery\DocuQuery_App
 
 
 
@@ -40,7 +40,7 @@ This app allows you to upload PDF or TXT documents, process them into embeddings
 
 
 
-5.To run the app open terminal in cloned repository folder and run
+#### To run the app open terminal in DocuQuery\DocuQuery_App and run (On each run)
 
 &nbsp;    streamlit run app.py
 
