@@ -42,7 +42,8 @@ api_key = st.sidebar.text_input("OpenAI API Key",type="password",value=os.enviro
 if api_key:
     os.environ["OPENAI_API_KEY"] = api_key
     openai.api_key = api_key
-
+else:
+    st.warning("Please enter your OpenAI API Key in the sidebar to start using the app.")
 #Permantly save API key on env file 
 with open(".env", "w") as f:
         f.write(f"OPENAI_API_KEY={api_key}\n")
@@ -60,7 +61,9 @@ st.sidebar.write(f"Current Model: `{LLM_MODEL}`")
 #Initialize Streamlit session state
 if "chunks" not in st.session_state:
     st.session_state["chunks"] = []
-if "emb_mgr" not in st.session_state:
+
+if api_key: #create only whe api available
+ if "emb_mgr" not in st.session_state:
     st.session_state["emb_mgr"] = EmbeddingsManager(model_name=EMBED_MODEL,api_key=api_key)
 if "embeddings_ready" not in st.session_state:
     st.session_state["embeddings_ready"] = False
