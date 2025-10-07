@@ -33,8 +33,9 @@ This app allows you to upload PDF or TXT documents, process them into embeddings
 &nbsp;        cd DocuQuery\DocuQuery_App
 
 
+4.Open .env file and give your API key. (Otherwise resulb in runtime error in first run but you can input api key on app too)
 
-4.Install dependencies run below command in bash.
+5.Install dependencies run below command in bash.
 
 &nbsp;    pip install -r requirements.txt
 
